@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bad62a7f720a4664b5e62d821a3250f4" Name="Diagram1">
+        <EntityTypeShape EntityType="RHSModel.Brand" Width="1.5" PointX="4.125" PointY="11.25" />
+        <EntityTypeShape EntityType="RHSModel.Color" Width="1.5" PointX="6.375" PointY="13.75" />
+        <EntityTypeShape EntityType="RHSModel.Customer" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RHSModel.Employee" Width="1.5" PointX="3.375" PointY="4.625" />
+        <EntityTypeShape EntityType="RHSModel.Inventory" Width="1.5" PointX="8.625" PointY="10.875" />
+        <EntityTypeShape EntityType="RHSModel.Product" Width="1.5" PointX="6.375" PointY="9.25" />
+        <EntityTypeShape EntityType="RHSModel.ProductType" Width="1.5" PointX="4.125" PointY="8.75" />
+        <EntityTypeShape EntityType="RHSModel.SaleItem" Width="1.5" PointX="10.875" PointY="4.875" />
+        <EntityTypeShape EntityType="RHSModel.Sale" Width="1.5" PointX="5.625" PointY="4.75" />
+        <EntityTypeShape EntityType="RHSModel.Service" Width="1.5" PointX="11.625" PointY="1" />
+        <EntityTypeShape EntityType="RHSModel.ServiceType" Width="1.5" PointX="9.375" PointY="1.625" />
+        <EntityTypeShape EntityType="RHSModel.SessionItem" Width="1.5" PointX="13.875" PointY="5" />
+        <EntityTypeShape EntityType="RHSModel.Session" Width="1.5" PointX="8.625" PointY="4.625" />
+        <AssociationConnector Association="RHSModel.FK_Products_Brands" />
+        <AssociationConnector Association="RHSModel.FK_Inventory_Colors" />
+        <AssociationConnector Association="RHSModel.FK_Sales_Customers" />
+        <AssociationConnector Association="RHSModel.FK_Sessions_Customers" />
+        <AssociationConnector Association="RHSModel.FK_Sales_Employees" />
+        <AssociationConnector Association="RHSModel.FK_Sessions_Employees" />
+        <AssociationConnector Association="RHSModel.FK_Inventory_Products" />
+        <AssociationConnector Association="RHSModel.FK_SaleItems_Inventory" />
+        <AssociationConnector Association="RHSModel.FK_Products_ProductTypes" />
+        <AssociationConnector Association="RHSModel.FK_SaleItems_Sales" />
+        <AssociationConnector Association="RHSModel.FK_Service_ServiceTypes" />
+        <AssociationConnector Association="RHSModel.FK_SessionItems_Service" />
+        <AssociationConnector Association="RHSModel.FK_SessionItems_Sessions" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

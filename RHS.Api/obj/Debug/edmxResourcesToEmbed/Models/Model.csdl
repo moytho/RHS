@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RHSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RHSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="RHSModel.Brand" />
+    <EntitySet Name="Colors" EntityType="RHSModel.Color" />
+    <EntitySet Name="Customers" EntityType="RHSModel.Customer" />
+    <EntitySet Name="Employees" EntityType="RHSModel.Employee" />
+    <EntitySet Name="Inventories" EntityType="RHSModel.Inventory" />
+    <EntitySet Name="Products" EntityType="RHSModel.Product" />
+    <EntitySet Name="ProductTypes" EntityType="RHSModel.ProductType" />
+    <EntitySet Name="SaleItems" EntityType="RHSModel.SaleItem" />
+    <EntitySet Name="Sales" EntityType="RHSModel.Sale" />
+    <EntitySet Name="Services" EntityType="RHSModel.Service" />
+    <EntitySet Name="ServiceTypes" EntityType="RHSModel.ServiceType" />
+    <EntitySet Name="SessionItems" EntityType="RHSModel.SessionItem" />
+    <EntitySet Name="Sessions" EntityType="RHSModel.Session" />
+    <AssociationSet Name="FK_Products_Brands" Association="RHSModel.FK_Products_Brands">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Colors" Association="RHSModel.FK_Inventory_Colors">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Customers" Association="RHSModel.FK_Sales_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sessions_Customers" Association="RHSModel.FK_Sessions_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Employees" Association="RHSModel.FK_Sales_Employees">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sessions_Employees" Association="RHSModel.FK_Sessions_Employees">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Products" Association="RHSModel.FK_Inventory_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleItems_Inventory" Association="RHSModel.FK_SaleItems_Inventory">
+      <End Role="Inventory" EntitySet="Inventories" />
+      <End Role="SaleItem" EntitySet="SaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_ProductTypes" Association="RHSModel.FK_Products_ProductTypes">
+      <End Role="ProductType" EntitySet="ProductTypes" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleItems_Sales" Association="RHSModel.FK_SaleItems_Sales">
+      <End Role="Sale" EntitySet="Sales" />
+      <End Role="SaleItem" EntitySet="SaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_ServiceTypes" Association="RHSModel.FK_Service_ServiceTypes">
+      <End Role="ServiceType" EntitySet="ServiceTypes" />
+      <End Role="Service1" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionItems_Service" Association="RHSModel.FK_SessionItems_Service">
+      <End Role="Service1" EntitySet="Services" />
+      <End Role="SessionItem" EntitySet="SessionItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionItems_Sessions" Association="RHSModel.FK_SessionItems_Sessions">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionItem" EntitySet="SessionItems" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="RHSModel.FK_Products_Brands" FromRole="Brand" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Inventories" Relationship="RHSModel.FK_Inventory_Colors" FromRole="Color" ToRole="Inventory" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CellPhone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoyaltyCard" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sales" Relationship="RHSModel.FK_Sales_Customers" FromRole="Customer" ToRole="Sale" />
+    <NavigationProperty Name="Sessions" Relationship="RHSModel.FK_Sessions_Customers" FromRole="Customer" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="CellPhone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pin" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Sales" Relationship="RHSModel.FK_Sales_Employees" FromRole="Employee" ToRole="Sale" />
+    <NavigationProperty Name="Sessions" Relationship="RHSModel.FK_Sessions_Employees" FromRole="Employee" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ColorID" Type="Int32" />
+    <Property Name="InStock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Color" Relationship="RHSModel.FK_Inventory_Colors" FromRole="Inventory" ToRole="Color" />
+    <NavigationProperty Name="Product" Relationship="RHSModel.FK_Inventory_Products" FromRole="Inventory" ToRole="Product" />
+    <NavigationProperty Name="SaleItems" Relationship="RHSModel.FK_SaleItems_Inventory" FromRole="Inventory" ToRole="SaleItem" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductTypeID" Type="Int32" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Brand" Relationship="RHSModel.FK_Products_Brands" FromRole="Product" ToRole="Brand" />
+    <NavigationProperty Name="Inventories" Relationship="RHSModel.FK_Inventory_Products" FromRole="Product" ToRole="Inventory" />
+    <NavigationProperty Name="ProductType" Relationship="RHSModel.FK_Products_ProductTypes" FromRole="Product" ToRole="ProductType" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="RHSModel.FK_Products_ProductTypes" FromRole="ProductType" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="SaleItem">
+    <Key>
+      <PropertyRef Name="SaleItemID" />
+    </Key>
+    <Property Name="SaleItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleID" Type="Int32" Nullable="false" />
+    <Property Name="InventoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <NavigationProperty Name="Inventory" Relationship="RHSModel.FK_SaleItems_Inventory" FromRole="SaleItem" ToRole="Inventory" />
+    <NavigationProperty Name="Sale" Relationship="RHSModel.FK_SaleItems_Sales" FromRole="SaleItem" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="SaleID" />
+    </Key>
+    <Property Name="SaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <NavigationProperty Name="Customer" Relationship="RHSModel.FK_Sales_Customers" FromRole="Sale" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="RHSModel.FK_Sales_Employees" FromRole="Sale" ToRole="Employee" />
+    <NavigationProperty Name="SaleItems" Relationship="RHSModel.FK_SaleItems_Sales" FromRole="Sale" ToRole="SaleItem" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceTypeID" Type="Int32" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ServiceType" Relationship="RHSModel.FK_Service_ServiceTypes" FromRole="Service1" ToRole="ServiceType" />
+    <NavigationProperty Name="SessionItems" Relationship="RHSModel.FK_SessionItems_Service" FromRole="Service1" ToRole="SessionItem" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="ServiceTypeID" />
+    </Key>
+    <Property Name="ServiceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Services" Relationship="RHSModel.FK_Service_ServiceTypes" FromRole="ServiceType" ToRole="Service1" />
+  </EntityType>
+  <EntityType Name="SessionItem">
+    <Key>
+      <PropertyRef Name="SessionItemID" />
+    </Key>
+    <Property Name="SessionItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SessionID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Service" Relationship="RHSModel.FK_SessionItems_Service" FromRole="SessionItem" ToRole="Service1" />
+    <NavigationProperty Name="Session" Relationship="RHSModel.FK_SessionItems_Sessions" FromRole="SessionItem" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="SessionID" />
+    </Key>
+    <Property Name="SessionID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CreationDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Completed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="RHSModel.FK_Sessions_Customers" FromRole="Session" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="RHSModel.FK_Sessions_Employees" FromRole="Session" ToRole="Employee" />
+    <NavigationProperty Name="SessionItems" Relationship="RHSModel.FK_SessionItems_Sessions" FromRole="Session" ToRole="SessionItem" />
+  </EntityType>
+  <Association Name="FK_Products_Brands">
+    <End Type="RHSModel.Brand" Role="Brand" Multiplicity="0..1" />
+    <End Type="RHSModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Colors">
+    <End Type="RHSModel.Color" Role="Color" Multiplicity="0..1" />
+    <End Type="RHSModel.Inventory" Role="Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="ColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Customers">
+    <End Type="RHSModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="RHSModel.Sale" Role="Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sessions_Customers">
+    <End Type="RHSModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="RHSModel.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Employees">
+    <End Type="RHSModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="RHSModel.Sale" Role="Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sessions_Employees">
+    <End Type="RHSModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="RHSModel.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Products">
+    <End Type="RHSModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="RHSModel.Inventory" Role="Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleItems_Inventory">
+    <End Type="RHSModel.Inventory" Role="Inventory" Multiplicity="1" />
+    <End Type="RHSModel.SaleItem" Role="SaleItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="InventoryID" />
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SaleItem">
+        <PropertyRef Name="InventoryID" />
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_ProductTypes">
+    <End Type="RHSModel.ProductType" Role="ProductType" Multiplicity="0..1" />
+    <End Type="RHSModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="ProductTypeID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleItems_Sales">
+    <End Type="RHSModel.Sale" Role="Sale" Multiplicity="1" />
+    <End Type="RHSModel.SaleItem" Role="SaleItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="SaleID" />
+      </Principal>
+      <Dependent Role="SaleItem">
+        <PropertyRef Name="SaleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_ServiceTypes">
+    <End Type="RHSModel.ServiceType" Role="ServiceType" Multiplicity="0..1" />
+    <End Type="RHSModel.Service" Role="Service1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceType">
+        <PropertyRef Name="ServiceTypeID" />
+      </Principal>
+      <Dependent Role="Service1">
+        <PropertyRef Name="ServiceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionItems_Service">
+    <End Type="RHSModel.Service" Role="Service1" Multiplicity="1" />
+    <End Type="RHSModel.SessionItem" Role="SessionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service1">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="SessionItem">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionItems_Sessions">
+    <End Type="RHSModel.Session" Role="Session" Multiplicity="1" />
+    <End Type="RHSModel.SessionItem" Role="SessionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionID" />
+      </Principal>
+      <Dependent Role="SessionItem">
+        <PropertyRef Name="SessionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
