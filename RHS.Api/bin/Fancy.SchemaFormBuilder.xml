@@ -1,0 +1,1538 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fancy.SchemaFormBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.DisplayWidth">
+            <summary>
+            Enumeration to specify the display width of an element
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.DisplayWidth.Full">
+            <summary>
+            The full possible display width.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.DisplayWidth.Half">
+            <summary>
+            The half of possible display width.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.DisplayWidth.Quarter">
+            <summary>
+            One quarter of possible display width.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormArrayAttribute">
+            <summary>
+            Marks an form array.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormArrayAttribute.AddButtonTitle">
+            <summary>
+            Gets or sets the add button title.
+            </summary>
+            <value>
+            The add button title.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormArrayAttribute.MinItems">
+            <summary>
+            Gets or sets the minimum items count.
+            </summary>
+            <value>
+            The minimum items.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormArrayAttribute.MaxItems">
+            <summary>
+            Gets or sets the maximum items count.
+            </summary>
+            <value>
+            The maximum items.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormAttribute">
+            <summary>
+            Marker base class to recognize form attributes. Base class for all form attributes.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormBoolAsRadioAttribute">
+            <summary>
+            Provides answer values for a boolean property.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormBoolAsRadioAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormBoolAsRadioAttribute"/> class.
+            </summary>
+            <param name="yesTitle">The yes title.</param>
+            <param name="noTitle">The no title.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormBoolAsRadioAttribute.YesTitle">
+            <summary>
+            Gets or sets the yes title.
+            </summary>
+            <value>
+            The yes title.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormBoolAsRadioAttribute.NoTitle">
+            <summary>
+            Gets or sets the no title.
+            </summary>
+            <value>
+            The no title.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormConditionAttribute">
+            <summary>
+            Defines a condition for a form element.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormConditionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormConditionAttribute"/> class.
+            </summary>
+            <param name="condition">The condition.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormConditionAttribute.Condition">
+            <summary>
+            Gets or sets the condition.
+            </summary>
+            <value>
+            The condition.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormDisplayAttribute">
+            <summary>
+            Attribute to declare a an element is shown in the form.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormDisplayAttribute.DisplayWidth">
+            <summary>
+            Gets or sets the display width.
+            </summary>
+            <value>
+            The display width.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute">
+            <summary>
+            Attribute to declare help information on a property.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute"/> class.
+            </summary>
+            <param name="helpText">The help text.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute.HelpText">
+            <summary>
+            Gets or sets the help text.
+            </summary>
+            <value>
+            The help text.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute.Condition">
+            <summary>
+            Gets or sets the condition.
+            </summary>
+            <remarks>
+            This property need to be a valid JavaScript expression which uses the name of the 
+            class and can then navigate to the properties of the class.
+            </remarks>
+            <value>
+            The condition.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormHelpAttribute.HelpType">
+            <summary>
+            Gets or sets the type of the help.
+            </summary>
+            <value>
+            The type of the help.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormMaxLengthAttribute">
+            <summary>
+            Attribute to declare the maximum length of a string.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormMaxLengthAttribute.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormMaxLengthAttribute" /> class.
+            </summary>
+            <param name="length">The length.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormMaxLengthAttribute.Length">
+            <summary>
+            Gets or sets the length.
+            </summary>
+            <value>
+            The length.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormRegExValidationAttribute">
+            <summary>
+            Attribute to specify a regular expression to a property to validate it.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormRegExValidationAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormRegExValidationAttribute"/> class.
+            </summary>
+            <param name="regEx">The regular expression.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormRegExValidationAttribute.RegEx">
+            <summary>
+            Gets or sets the regular expression.
+            </summary>
+            <value>
+            The regular expression.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormRequiredAttribute">
+            <summary>
+            Attribute to identify required properties.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute">
+            <summary>
+            An attribute to control the hierarchy of the form layout.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute"/> class.
+            </summary>
+            <param name="hierarchyPath">The hierarchy path.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute.HierarchyPath">
+            <summary>
+            Gets or sets the hierarchy path.
+            </summary>
+            <remarks>
+            The hierarchy path consists of names for the singe layers in the hierarchy separated with a dot. 
+            </remarks>
+            <value>
+            The hierarchy path.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute.SectionType">
+            <summary>
+            Gets or sets the type of the section.
+            </summary>
+            <value>
+            The type of the section.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute.Title">
+            <summary>
+            Gets or sets the title of the section.
+            </summary>
+            <remarks>
+            Title is not shown always, for example if you choose "section" as type.
+            </remarks>
+            <value>
+            The title.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute.Condition">
+            <summary>
+            Gets or sets the condition which decides weather to show the entire section or not.
+            </summary>
+            <value>
+            The condition.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormSimpleChoiceAttribute">
+            <summary>
+            Provides allowed values for a property.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormSimpleChoiceAttribute.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormSimpleChoiceAttribute"/> class.
+            </summary>
+            <param name="values">The values.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormSimpleChoiceAttribute.Values">
+            <summary>
+            Gets or sets the values.
+            </summary>
+            <value>
+            The values.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormSubObjectAttribute">
+            <summary>
+            Specifies that the current property contains a object which shall also be included in the form.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormTextAttribute">
+            <summary>
+            Attribute to add text to the form.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormTextAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormTextAttribute"/> class.
+            </summary>
+            <param name="text">The text.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormTextAttribute.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormTitleAttribute">
+            <summary>
+            Attribute to identify required properties.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormTitleAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormTitleAttribute"/> class.
+            </summary>
+            <param name="title">The title.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormTitleAttribute.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+            <value>
+            The title.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormUrlLookupAttribute">
+            <summary>
+            Provides a lookup type for a property which values come from a lookup url.
+            </summary>
+            <remarks>
+            The lookup url to the specified lookup type is retrieved by using the <see cref="T:Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider"/> interface. An implementation
+            of this class has to return an url which provides the possible values as title map. 
+            </remarks>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormUrlLookupAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormUrlLookupAttribute"/> class.
+            </summary>
+            <param name="lookupType">Type of the lookup.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormUrlLookupAttribute.LookupType">
+            <summary>
+            Gets the type of the lookup.
+            </summary>
+            <value>
+            The type of the lookup.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.FormValidationMessageAttribute">
+            <summary>
+            Attribute to add a validation message to a property
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Annotations.FormValidationMessageAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormValidationMessageAttribute" /> class.
+            </summary>
+            <param name="messageText">The validation message text.</param>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Annotations.FormValidationMessageAttribute.MessageText">
+            <summary>
+            Gets or sets the message text.
+            </summary>
+            <value>
+            The message text.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.HelpType">
+            <summary>
+            The help type.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.HelpType.Info">
+            <summary>
+            Information
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.HelpType.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.HelpType.Error">
+            <summary>
+            Error.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Annotations.SectionType">
+            <summary>
+            Describes the possible types of section.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.SectionType.Fieldset">
+            <summary>
+            The fieldset section type.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Annotations.SectionType.Section">
+            <summary>
+            The section section type.
+            </summary>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Providers.ILanguageProvider">
+            <summary>
+            Provides languages resources for form and schema modules to render form in a specific language. 
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Providers.ILanguageProvider.GetTextForKey(System.String,Fancy.SchemaFormBuilder.Providers.LanguageContext)">
+            <summary>
+            Gets the text for a specific key in a specific language.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="languageContext">The language context.</param>
+            <returns>
+            The text.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider">
+            <summary>
+            Interface to retrieve url to named lookup types.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider.GetUrlForLookupType(System.String)">
+            <summary>
+            Gets the type of the URL to the REST endpoint for the specified lookup type.
+            </summary>
+            <param name="lookupType">Type of the lookup.</param>
+            <returns>The URL to the REST endpoint.</returns>
+            <remarks>
+            The URL returned by this method has to deliver title map when called. 
+            </remarks>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Providers.LanguageContext">
+            <summary>
+            A conteext for a language provider with information usable to decide which strings to return to a text request.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Providers.LanguageContext.Culture">
+            <summary>
+            Gets or sets the culture for the required texts.
+            </summary>
+            <value>
+            The culture.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Providers.LanguageContext.DtoType">
+            <summary>
+            Gets or sets the type of the dto the required texts shall apply to.
+            </summary>
+            <value>
+            The type of the dto.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Providers.LanguageContext.OriginDtoType">
+            <summary>
+            Gets or sets the type of the origin dto which finally led to the processing of the <see cref="P:Fancy.SchemaFormBuilder.Providers.LanguageContext.DtoType"/>.
+            </summary>
+            <value>
+            The type of the origin dto.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder">
+            <summary>
+            Default implementation of an schema form builder which uses all supported modules.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder._urlLookupProvider">
+            <summary>
+            The url lookup provider.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder._languageProvider">
+            <summary>
+            The language provider.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder.#ctor(Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder"/> class.
+            </summary>
+            <param name="urlLookupProvider">The URL lookup provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder.ConfigureFormBuilder(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Configures the form builder.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.DefaultSchemaFormBuilder.ConfigureSchemaBuilder(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Configures the schema builder.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormBuilder">
+            <summary>
+            Implements the <see cref="T:Fancy.SchemaFormBuilder.Services.IFormBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.FormBuilder._pipelineModules">
+            <summary>
+            The pipeline modules.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilder.BuildForm(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Builds the form.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>
+            A description of the form in JSON.
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilder.BuildForm(System.Type,System.Type,System.Globalization.CultureInfo,System.String)">
+            <summary>
+            Builds a form starting from a specified property path.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="originType">Type of the origin object for which the processing was started.</param>
+            <param name="cultureInfo">The culture information.</param>
+            <param name="sourcePropertyPath">The source property path to use as start.</param>
+            <returns>
+            A description of the form in JSON
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilder.AddPipelineModule(Fancy.SchemaFormBuilder.Services.IFormBuilderModule)">
+            <summary>
+            Adds a module to the pipeline.
+            </summary>
+            <param name="module">The module.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilder.ProcessProperty(System.Type,System.Type,System.Reflection.PropertyInfo,Newtonsoft.Json.Linq.JArray,System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Processes a property through the pipeline modules.
+            </summary>
+            <param name="objectType">Type of the object.</param>
+            <param name="originObjectType">Type of the origin object.</param>
+            <param name="propertyInfo">The property information.</param>
+            <param name="formElements">The form elements.</param>
+            <param name="sourcePropertyPath">The source property path to use as start.</param>
+            <param name="cultureInfo">The culture information.</param>
+            <returns>
+            The form element.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormBuilderContext">
+            <summary>
+            Context with all information required in the form builder pipeline.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.FormBuilder">
+            <summary>
+            Gets the form builder.
+            </summary>
+            <value>
+            The form builder.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.DtoType">
+            <summary>
+            Gets or sets the type of the dto beeing process in this context.
+            </summary>
+            <value>
+            The type of the dto.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.OriginDtoType">
+            <summary>
+            Gets or sets the type of the origin dto which finally led to the processing of the <see cref="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.DtoType"/>.
+            </summary>
+            <value>
+            The type of the origin dto.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.Property">
+            <summary>
+            Gets the property which is currently processed by the pipeline.
+            </summary>
+            <value>
+            The property.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.FullPropertyPath">
+            <summary>
+            Gets the full property path.
+            </summary>
+            <value>
+            The full property path.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.CurrentFormElement">
+            <summary>
+            Gets or sets the form element which will be written to the JSON form description.
+            </summary>
+            <remarks>
+            This property contains the result of processing a property by the pipeline. All modules can write into this property
+            to extends the schema information of the property being processed.
+            </remarks>
+            <value>
+            The element.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.CurrentFormElementParent">
+            <summary>
+            Gets or sets the current parent of the form element.
+            </summary>
+            <value>
+            The current form parent.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.CompleteForm">
+            <summary>
+            Gets or sets the complete form in the current processing stage.
+            </summary>
+            <value>
+            The complete form.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.FinishProcessing">
+            <summary>
+            Gets or sets a value indicating whether the pipeline shall finish processing after the module has benn run or not.
+            </summary>
+            <value>
+              <c>true</c> if the shall finish the processing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.FormBuilderContext.TargetCulture">
+            <summary>
+            Gets or sets the target culture.
+            </summary>
+            <value>
+            The target culture.
+            </value>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilderContext.GetOrCreateCurrentFormElement">
+            <summary>
+            Gets the or the current form element. If it does not exist yet it will be created.
+            </summary>
+            <returns>The form element JSON object.</returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormBuilderContext.GetLanguageContext">
+            <summary>
+            Gets the language context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.IFormBuilder">
+            <summary>
+            Interface for a form builder.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.IFormBuilder.BuildForm(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Builds the form.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>A description of the form in JSON.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Fancy.SchemaFormBuilder.Services.IFormBuilder.BuildForm(System.Type,System.Type,System.Globalization.CultureInfo,System.String)" -->
+        <member name="T:Fancy.SchemaFormBuilder.Services.IFormBuilderModule">
+            <summary>
+            Interface for a form builder pipeline module. The module has to process a context and add information to it 
+            as far as it is possible and control the further execution of the pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.IFormBuilderModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.ISchemaBuilder">
+            <summary>
+            Interface for a JSON schema builder.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.ISchemaBuilder.BuildSchema(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Builds the JSON schema for a specified type.
+            </summary>
+            <param name="type">The type to build the schema for.</param>
+            <param name="cultureInfo">The culture information.</param>
+            <returns>
+            The JSON schema.
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Fancy.SchemaFormBuilder.Services.ISchemaBuilder.BuildSchema(System.Type,System.Type,System.Globalization.CultureInfo)" -->
+        <member name="T:Fancy.SchemaFormBuilder.Services.ISchemaBuilderModule">
+            <summary>
+            Interface for a schema builder pipeline module. The module has to process a context and add information to it 
+            as far as it is possible and control the further execution of the pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.ISchemaBuilderModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.ISchemaFormBuilder">
+            <summary>
+            Interface for the main service to create a schema and a form description from a .NET type.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.ISchemaFormBuilder.CreateSchemaForm(System.Type)">
+            <summary>
+            Creates the schema form info object to the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The schema form info.</returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.ISchemaFormBuilder.CreateSchemaForm(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Creates the schema form info object to the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The schema form info.</returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaBuilder">
+            <summary>
+            Implements the <see cref="T:Fancy.SchemaFormBuilder.Services.ISchemaBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.SchemaBuilder._pipelineModules">
+            <summary>
+            The pipeline modules.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilder.BuildSchema(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Builds the JSON schema for a specified type.
+            </summary>
+            <param name="type">The type to build the schema for.</param>
+            <param name="cultureInfo"></param>
+            <returns>
+            The JSON schema.
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Fancy.SchemaFormBuilder.Services.SchemaBuilder.BuildSchema(System.Type,System.Type,System.Globalization.CultureInfo)" -->
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilder.AddPipelineModule(Fancy.SchemaFormBuilder.Services.ISchemaBuilderModule)">
+            <summary>
+            Adds a module to the pipeline.
+            </summary>
+            <param name="module">The module.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilder.ProcessProperty(System.Type,System.Type,System.Reflection.PropertyInfo,System.Globalization.CultureInfo)">
+            <summary>
+            Processes a property through the pipeline modules.
+            </summary>
+            <param name="objectType">Type of the object beeing processed.</param>
+            <param name="originObjectType">Type of the origin object.</param>
+            <param name="propertyInfo">The property information.</param>
+            <param name="cultureInfo">The culture information.</param>
+            <returns>
+            The schema element.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext">
+            <summary>
+            Context with all information required in the schema builder pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext"/> class.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.DtoType">
+            <summary>
+            Gets the type of the dto beeing process in this context.
+            </summary>
+            <value>
+            The type of the dto.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.OriginDtoType">
+            <summary>
+            Gets or sets the type of the origin dto which finally led to the processing of the <see cref="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.DtoType"/>.
+            </summary>
+            <value>
+            The type of the origin dto.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.SchemaBuilder">
+            <summary>
+            Gets the schema builder.
+            </summary>
+            <value>
+            The schema builder.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.Property">
+            <summary>
+            Gets the property which is currently processed by the pipeline.
+            </summary>
+            <value>
+            The property.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.Element">
+            <summary>
+            Gets the element which will be written to the JSON schema.
+            </summary>
+            <remarks>
+            This property contains the result of processing a property by the pipeline. All modules can write into this property
+            to extends the schema information of the property being processed.
+            </remarks>
+            <value>
+            The element.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.FinishProcessing">
+            <summary>
+            Gets or sets a value indicating whether the pipeline shall finish processing after the module has benn run or not.
+            </summary>
+            <value>
+              <c>true</c> if the shall finish the processing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.TargetCulture">
+            <summary>
+            Gets or sets the target culture.
+            </summary>
+            <value>
+            The target culture.
+            </value>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaBuilderContext.GetLanguageContext">
+            <summary>
+            Gets the language context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaElement">
+            <summary>
+            Describes one element in a JSON schema.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaElement.Schema">
+            <summary>
+            Gets or sets the schema of the element.
+            </summary>
+            <value>
+            The schema.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaElement.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this element is required.
+            </summary>
+            <value>
+            <c>true</c> if this element is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaElement.GetOrCreateSchemaObject">
+            <summary>
+            Gets the existing schema or creates a new empty schema object if it does not exist yet.
+            </summary>
+            <returns>The schema JSON object.</returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase">
+            <summary>
+            Base implementation of the <see cref="T:Fancy.SchemaFormBuilder.Services.ISchemaFormBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase._formBuilder">
+            <summary>
+            The form builder.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase._schemaBuilder">
+            <summary>
+            The schema builder.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase.CreateSchemaForm(System.Type)">
+            <summary>
+            Creates the schema form info object to the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>
+            The schema form info.
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase.CreateSchemaForm(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Creates the schema form info object to the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>
+            The schema form info.
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase.ConfigureFormBuilder(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Configures the form builder.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaFormBuilderBase.ConfigureSchemaBuilder(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Configures the schema builder.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaFormInfo">
+            <summary>
+            Object with schema and form information about a type.
+            </summary>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaFormInfo.Schema">
+            <summary>
+            Gets or sets the schema.
+            </summary>
+            <value>
+            The schema.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaFormInfo.Form">
+            <summary>
+            Gets or sets the form.
+            </summary>
+            <value>
+            The form.
+            </value>
+        </member>
+        <member name="P:Fancy.SchemaFormBuilder.Services.SchemaFormInfo.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.ArrayFormModule">
+            <summary>
+            Adds properties of sub objects to the form if the current property is a form sub object.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.ArrayFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.ArrayFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.ArrayFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.BoolAsRadiosFormModule">
+            <summary>
+            Configures radio buttons into the form for booleans.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.BoolAsRadiosFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.BoolAsRadiosFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.BoolAsRadiosFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.ConditionFormModule">
+            <summary>
+            Adds a condition to the current form element.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.ConditionFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.DisplayFormModule">
+            <summary>
+            Configures an element how to display it.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.DisplayFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.DisplayFormModule.ConvertDisplayWidthToCssClass(Fancy.SchemaFormBuilder.Annotations.DisplayWidth)">
+            <summary>
+            Converts the display width to CSS classes.
+            </summary>
+            <param name="displayWidth">The display width.</param>
+            <returns>Names of CSS classes.</returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.EnumTitleMapFormModule">
+            <summary>
+            Adds a title map to the form if the current property is an enumeration and the enumeration fields have a title.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.EnumTitleMapFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.EnumTitleMapFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.EnumTitleMapFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions">
+            <summary>
+            Extension methods to conveniently configure the form builder pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseTitleKeyModule(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Adds the title key module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseSectionModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the section module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseHelpModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the help module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseTextFormModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the text form module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseSubObjectModule(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Adds the sub object module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseEnumTitleMapModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the enumeration title map module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseDisplayModule(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Adds the display module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseSimpleChoiceModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the simple choice module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseBoolAsTitleMapModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the bool as title map module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseArrayModule(Fancy.SchemaFormBuilder.Services.FormBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Uses the array module.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormBuilderExtensions.UseConditionModule(Fancy.SchemaFormBuilder.Services.FormBuilder)">
+            <summary>
+            Adds the condition module to the pipeline.
+            </summary>
+            <param name="formBuilder">The form builder.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase">
+            <summary>
+            Base class for form modules.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase._languageProvider">
+            <summary>
+            The language provider.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase"/> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleBase.GetTextForKey(System.String,Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Gets the text for key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="formBuilderContext">The form builder context.</param>
+            <returns>
+            The string for the requested key.
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.FormModuleHelper.ConvertConditionToAbsolutePath(System.String,System.String,System.String)">
+            <summary>
+            Converts a condition expression to an absolute path.
+            </summary>
+            <param name="typeName">Name of the type.</param>
+            <param name="fullPropertyPath">The full property path.</param>
+            <param name="conditionExpression">The condition expression.</param>
+            <returns>
+            The converted expression.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule">
+            <summary>
+            Adds help information to the form if the current property has the help attribute.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule.DetermineHelpCssClasses(Fancy.SchemaFormBuilder.Annotations.HelpType)">
+            <summary>
+            Determines the help CSS classes.
+            </summary>
+            <param name="helpType">Type of the help.</param>
+            <returns>The CSS classes to use for help html item.</returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.HelpFormModule.ConvertConditionToAbsolutePath(System.String,System.String,System.String)">
+            <summary>
+            Converts the condition expression to absolute path.
+            </summary>
+            <param name="typeName">Name of the type.</param>
+            <param name="fullPropertyPath">The full property path.</param>
+            <param name="conditionExpression">The condition expression.</param>
+            <returns>
+            The converted expression.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule">
+            <summary>
+            Builds up sections for the form.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.HierarchyPathPropertyName">
+            <summary>
+            The hierarchy path property name, used to navigate through the form hierarchies
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.UpdateFormHierarchyObject(Newtonsoft.Json.Linq.JObject,Fancy.SchemaFormBuilder.Annotations.FormSectionAttribute,Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Updates a form hierarchy object.
+            </summary>
+            <param name="hierarchyObject">The hierarchy object.</param>
+            <param name="formSection">The form section.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.FindFormHierarchyObject(Newtonsoft.Json.Linq.JArray,System.String,System.Boolean)">
+            <summary>
+            Finds the form hierarchy object.
+            </summary>
+            <param name="form">The form.</param>
+            <param name="hierarchyPath">The hierarchy path.</param>
+            <param name="createIfNotExists">if set to <c>true</c> [create if not exists].</param>
+            <returns>The JSON token representing the hierarchy object or null if not found and shall not be created.</returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.CreateDefaultHierarchyLayerObject(System.String)">
+            <summary>
+            Creates a new hierarchy layer object with default settings.
+            </summary>
+            <param name="hierarchyPath">The hierarchy path.</param>
+            <returns>
+            A form hierarchy object.
+            </returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SectionFormModule.ConvertSectionType(Fancy.SchemaFormBuilder.Annotations.SectionType)">
+            <summary>
+            Converts the type of the section to a string.
+            </summary>
+            <param name="sectionType">Type of the section.</param>
+            <returns>The section type as string.</returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.SimpleChoiceTitleMapFormModule">
+            <summary>
+            Adds a title map to the form if the current property is marked with the <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormSimpleChoiceAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SimpleChoiceTitleMapFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.SimpleChoiceTitleMapFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SimpleChoiceTitleMapFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.SubObjectFormModule">
+            <summary>
+            Adds properties of sub objects to the form if the current property is a form sub object.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.SubObjectFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.TextFormModule">
+            <summary>
+            Adds text information to the form if the current property has the form text attribute.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.TextFormModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.FormModules.TextFormModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.TextFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.FormModules.TitleKeyFormModule">
+            <summary>
+            Adds the member of an property to the form if it has a title attribute.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.FormModules.TitleKeyFormModule.Process(Fancy.SchemaFormBuilder.Services.FormBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.ArraySchemaModule">
+            <summary>
+            Adds an array to the schema.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.ArraySchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.AttributedPropertiesOnlySchemaModule">
+            <summary>
+            Checks weather the current property has a <see cref="T:Fancy.SchemaFormBuilder.Annotations.FormAttribute"/>. If not the module stops the pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.AttributedPropertiesOnlySchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.MaxLengthSchemaModule">
+            <summary>
+            Sets the max length to a property if the attribute is declared.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.MaxLengthSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.RegExValidationSchemaModule">
+            <summary>
+            Identifies weather a property has a regular expression and adds the patter to the schema element.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.RegExValidationSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.RequiredSchemaModule">
+            <summary>
+            Identifies weather a property is required and adds the information to the context.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.RequiredSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions">
+            <summary>
+            Extension methods to conveniently configure the schema builder pipeline.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseAttributedPropertiesOnlyModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the attibuted properties only module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseTypeModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the type module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseSubObjectModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the sub object module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseArrayModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the array module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseRequiredModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the required module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseTitleModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the title module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseRegExValidationModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the regular expression validation module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseValidationMessageModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder,Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Adds the validation message module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseMaxLengthModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder)">
+            <summary>
+            Adds the maximum length module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchemaBuilderExtensions.UseUrlLookupProviderModule(Fancy.SchemaFormBuilder.Services.SchemaBuilder,Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider)">
+            <summary>
+            Adds the URL lookup provider module to the pipeline.
+            </summary>
+            <param name="schemaBuilder">The schema builder.</param>
+            <param name="urlLookupProvider">The URL lookup provider.</param>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase._languageProvider">
+            <summary>
+            The language provider.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase"/> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SchmeaModuleBase.GetTextForKey(System.String,Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Gets the text for key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="schemaBuilderContext">The schema builder context.</param>
+            <returns>
+            The string for the requested key.
+            </returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.SubObjectSchemaModule">
+            <summary>
+            Adds a subobject to the schema.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.SubObjectSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.TitleSchemaModule">
+            <summary>
+            Identifies weather a property is required and adds the information to the context.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.TitleSchemaModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaModules.TitleSchemaModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.TitleSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.TypeSchemaModule">
+            <summary>
+            Adds the type to the schema element.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.TypeSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.TypeSchemaModule.DeterminePropertyType(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Determines the type of the property.
+            </summary>
+            <param name="context">The context to determine the type from.</param>
+            <returns>The type of the property.</returns>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.TypeSchemaModule.DetermineSimpleSchemaType(System.Type)">
+            <summary>
+            Determines the type of the schema if the type is a simple type.
+            </summary>
+            <param name="propertyType">Type of the property.</param>
+            <returns>The schema type name of the property.</returns>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.UrlLookupSchemaModule">
+            <summary>
+            Makes a property of a form a look up property which retrieves its data from an other REST endpoint.
+            </summary>
+        </member>
+        <member name="F:Fancy.SchemaFormBuilder.Services.SchemaModules.UrlLookupSchemaModule._urlLookupProvider">
+            <summary>
+            The url lookup provider.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.UrlLookupSchemaModule.#ctor(Fancy.SchemaFormBuilder.Providers.IUrlLookupProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaModules.UrlLookupSchemaModule"/> class.
+            </summary>
+            <param name="urlLookupProvider">The URL lookup provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.UrlLookupSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+        <member name="T:Fancy.SchemaFormBuilder.Services.SchemaModules.ValidationMessageSchemaModule">
+            <summary>
+            Adds a validation message to the schema if a property has the "ValidationMessage" attribute.
+            </summary>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.ValidationMessageSchemaModule.#ctor(Fancy.SchemaFormBuilder.Providers.ILanguageProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Fancy.SchemaFormBuilder.Services.SchemaModules.TitleSchemaModule" /> class.
+            </summary>
+            <param name="languageProvider">The language provider.</param>
+        </member>
+        <member name="M:Fancy.SchemaFormBuilder.Services.SchemaModules.ValidationMessageSchemaModule.Process(Fancy.SchemaFormBuilder.Services.SchemaBuilderContext)">
+            <summary>
+            Processes the specified context.
+            </summary>
+            <param name="context">The context to process.</param>
+        </member>
+    </members>
+</doc>

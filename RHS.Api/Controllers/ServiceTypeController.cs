@@ -10,12 +10,29 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using RHS.Api.Models;
 using RHS.Api.DAL;
+using Fancy.SchemaFormBuilder.Services;
 namespace RHS.Api.Controllers
 {
     public class ServiceTypeController : ApiController
     {
         private UnitOfWork unitOfWork = new UnitOfWork();
+        private readonly ISchemaFormBuilder _schemaFormBuilder = new DefaultSchemaFormBuilder();
 
+
+        public ServiceTypeController() { 
+        
+        }
+        public ServiceTypeController(ISchemaFormBuilder schemaFormBuilder)
+        {
+            _schemaFormBuilder = schemaFormBuilder;
+        }
+
+        [Route("api/servicetype/getmetadata")]
+        public IHttpActionResult GetMetaData() {
+            SchemaFormInfo schemaFormInfo = _schemaFormBuilder.CreateSchemaForm(typeof(ServiceTypeDTO));
+            return Ok(schemaFormInfo);
+        }
+        
         // GET api/ServiceType
         public IEnumerable<ServiceTypeDTO> GetServiceTypes()
         {
