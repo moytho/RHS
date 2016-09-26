@@ -11,6 +11,8 @@ using System.Web.Http.Description;
 using RHS.Api.Models;
 using RHS.Api.DAL;
 using Fancy.SchemaFormBuilder.Services;
+using RHS.Api.Extensions;
+using Newtonsoft.Json;
 namespace RHS.Api.Controllers
 {
     public class ServiceTypeController : ApiController
@@ -29,8 +31,10 @@ namespace RHS.Api.Controllers
 
         [Route("api/servicetype/getmetadata")]
         public IHttpActionResult GetMetaData() {
-            SchemaFormInfo schemaFormInfo = _schemaFormBuilder.CreateSchemaForm(typeof(ServiceTypeDTO));
-            return Ok(schemaFormInfo);
+            //SchemaFormInfo schemaFormInfo = _schemaFormBuilder.CreateSchemaForm(typeof(ServiceTypeDTO));
+            var result = Common.ReadObject(typeof(ServiceTypeDTO));
+            var json = JsonConvert.SerializeObject(result);
+            return Ok(json);
         }
         
         // GET api/ServiceType
@@ -57,7 +61,7 @@ namespace RHS.Api.Controllers
                                Active = st.Active,
                                     Description = st.Description,
                                     ServiceTypeID = st.ServiceTypeID
-                               });
+                               }).FirstOrDefault();
             if (servicetype == null)
             {
                 return NotFound();

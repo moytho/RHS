@@ -1,0 +1,14 @@
+﻿<h1>{{title}}</h1>
+
+<div class="col-md-6">
+    {{model}}
+    <form name="myform">
+        <div sf-schema="schema" sf-form="form" sf-model="model">
+            
+        </div>
+        <input type="submit" class="btn btn-primary" value="Guardar" ng-click="onSubmit(myform)">
+        <button type="button" ng-show="edit" class="btn btn-danger" ng-click="remove()">Eliminar</button>
+        <button type="button" class="btn btn-default" ng-click="goBack()">Regresar</button>
+        
+    </form>
+</div>

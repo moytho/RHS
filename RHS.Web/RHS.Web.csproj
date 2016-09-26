@@ -74,8 +74,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\authentication\authentication-interceptor-service.js" />
+    <Content Include="app\authentication\authentication-service.js" />
+    <Content Include="app\authentication\login-controller.js" />
+    <Content Include="app\authentication\login.html" />
+    <Content Include="app\authentication\signin.html" />
+    <Content Include="app\dashboard\shared-views\shared-view.html" />
+    <Content Include="app\dashboard\user\controllers\user-controller.js" />
+    <Content Include="app\dashboard\user\views\user-list.html" />
+    <Content Include="app\dashboard\user\services\user-service.js" />
+    <Content Include="app\shared-directives\directives.js" />
+    <Content Include="app\shared-services\authInterceptorService.js" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
+    <Content Include="css\angular-toastr.css" />
     <Content Include="Scripts\angular-confirm.js" />
     <Content Include="Scripts\angular-local-storage.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
@@ -98,11 +110,6 @@
     <Content Include="app\dashboard\services\views\service-type-list.html" />
     <Content Include="app\dashboard\services\services\service-service.js" />
     <Content Include="app\dashboard\services\services\service-type-service.js" />
-    <Content Include="app\signin\authentication-interceptor-service.js" />
-    <Content Include="app\signin\authentication-service.js" />
-    <Content Include="app\signin\login-controller.js" />
-    <Content Include="app\signin\signin.html" />
-    <Content Include="app\signin\login.html" />
     <Content Include="app\configuration\configuration.js" />
     <Content Include="Content\angular-toastr.css" />
     <Content Include="Content\angular-toastr.min.css" />
@@ -151,6 +158,8 @@
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-schema-form.js" />
+    <Content Include="Scripts\angular-schema-form.min.js" />
     <Content Include="Scripts\angular-toastr.js" />
     <Content Include="Scripts\angular-toastr.min.js" />
     <Content Include="Scripts\angular-toastr.tpls.js" />
@@ -165,6 +174,8 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-decorator.js" />
+    <Content Include="Scripts\bootstrap-decorator.min.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -934,6 +945,9 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
+    <Content Include="Scripts\ObjectPath.js" />
+    <Content Include="Scripts\tv4.js" />
+    <Content Include="Scripts\tv4.min.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\version.json" />
@@ -943,6 +957,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\dashboard\product\" />
+    <Folder Include="app\shared-controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

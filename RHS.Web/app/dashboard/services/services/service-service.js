@@ -31,9 +31,8 @@ app.factory('serviceService', ['$http', 'CONFIG', function ($http, CONFIG) {
         });
     };
 
-    var _delete = function (id, element) {
-
-        return $http.delete(serviceBase + 'api/services/' + element).then(function (results) {
+    var _delete = function (id) {
+        return $http.delete(serviceBase + 'api/services/' + id).then(function (results) {
             return results;
         });
     };

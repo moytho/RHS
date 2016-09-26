@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.factory('serviceTypeService', ['$http', 'CONFIG', function ($http, CONFIG) {
+app.factory('userService', ['$http', 'CONFIG', function ($http, CONFIG) {
     var serviceBase = CONFIG.SERVICE_BASE;
     var serviceFactory = {};
 
@@ -26,7 +26,7 @@ app.factory('serviceTypeService', ['$http', 'CONFIG', function ($http, CONFIG) {
 
     var _create = function (element) {
 
-        return $http.post(serviceBase + 'api/servicetype', element).then(function (results) {
+        return $http.post(serviceBase + 'api/account/register', element).then(function (results) {
             return results;
         });
     };
