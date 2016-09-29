@@ -27,5 +27,6 @@ namespace RHS.Api.Models
         [FormSection("Name")]
         [FormDisplay(DisplayWidth = DisplayWidth.Half)]*/
         public bool Active { get; set; }
+        public string Icon { get; set; }
     }
 }

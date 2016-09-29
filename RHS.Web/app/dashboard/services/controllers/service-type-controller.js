@@ -27,7 +27,8 @@ app.controller('serviceTypeEditController', ['$scope', 'serviceTypeService', '$l
         $scope.schema = {
                 type: "object",
                 properties: {
-                    Description: { type: "string", minLength: 5, title: "Descripcion tipo de servicio","required": true},
+                    Description: { type: "string", minLength: 5, title: "Descripcion tipo de servicio", "required": true },
+                    Icon: { type: "string", minLength: 5, title: "Icono a utilizar","required": true},
                 }
         };
 
@@ -86,7 +87,8 @@ app.controller('serviceTypeCreateController', ['$scope', 'serviceTypeService', '
     $scope.schema = {
         type: "object",
         properties: {
-            Description: { type: "string", minLength: 5, title: "Descripcion tipo de servicio" },
+            Description: { type: "string", minLength: 5, title: "Descripcion tipo de servicio", "required": true },
+            Icon: { type: "string", minLength: 5, title: "Icono a utilizar", "required": true },
         }
     };
 

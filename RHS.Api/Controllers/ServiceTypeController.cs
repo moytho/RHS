@@ -45,7 +45,8 @@ namespace RHS.Api.Controllers
                                 select new ServiceTypeDTO{
                                     Active = st.Active,
                                     Description = st.Description,
-                                    ServiceTypeID = st.ServiceTypeID
+                                    ServiceTypeID = st.ServiceTypeID,
+                                    Icon = st.Icon
                                 }); 
 
             //serviceTypes = serviceTypes.Where(c => c.Active == true);
@@ -60,7 +61,8 @@ namespace RHS.Api.Controllers
                                select new ServiceTypeDTO{
                                Active = st.Active,
                                     Description = st.Description,
-                                    ServiceTypeID = st.ServiceTypeID
+                                    ServiceTypeID = st.ServiceTypeID,
+                                    Icon = st.Icon
                                }).FirstOrDefault();
             if (servicetype == null)
             {

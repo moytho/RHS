@@ -13,6 +13,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'ProfileController'
             
         })
+        .state('dashboard.main', {
+            url: '/main',
+            templateUrl: 'app/dashboard/main/views/main.html',
+            controller: 'mainController'
+
+        })
         .state('dashboard.account', {
             url: '/account',
             templateUrl: 'app/dashboard/account.html',
@@ -26,13 +32,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('dashboard.service-type-edit', {
             url: '/service-type-edit/:id',
-            templateUrl: 'app/dashboard/shared-views/shared-view.html',
+            templateUrl: 'app/dashboard/shared-views/form-view.html',
             controller: 'serviceTypeEditController'
 
         })
         .state('dashboard.service-type-create', {
             url: '/service-type-create',
-            templateUrl: 'app/dashboard/shared-views/shared-view.html',
+            templateUrl: 'app/dashboard/shared-views/form-view.html',
             controller: 'serviceTypeCreateController'
 
         }).state('dashboard.user', {
@@ -43,13 +49,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('dashboard.user-edit', {
             url: '/user-edit/:id',
-            templateUrl: 'app/dashboard/shared-views/shared-view.html',
+            templateUrl: 'app/dashboard/shared-views/form-view.html',
             controller: 'userEditController'
 
         })
         .state('dashboard.user-create', {
             url: '/user-create',
-            templateUrl: 'app/dashboard/shared-views/shared-view.html',
+            templateUrl: 'app/dashboard/shared-views/form-view.html',
             controller: 'userCreateController'
 
         })
@@ -63,7 +69,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'loginController'
             
         });
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('authentication.login');
 });
 
 app.run(['authService', function (authService) {
@@ -76,16 +82,10 @@ app.config(function ($httpProvider) {
 
 app.run(function ($rootScope, $state, $location, authService) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-        //console.log("isAuth from $stateChangeStart " + authService.authentication.isAuth);
-        //console.log("toState ");
-        //console.log(toState);
         let loggedIn = authService.authentication.isAuth;
-        //console.log("loggedIn "+loggedIn);
         if (toState.name !== 'authentication.login' && !loggedIn) {
-            //console.log("user is not authenticate")
-            //$state.go('authentication.login');c
-            $state.transitionTo('authentication.login');
-            //$location.url('/authentication/login');
+            //$state.transitionTo('authentication.login');
+            $location.path('/authentication/login');
         }
     });
 });

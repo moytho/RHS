@@ -118,6 +118,7 @@
     <EntitySetMapping Name="ServiceTypes">
       <EntityTypeMapping TypeName="RHSModel.ServiceType">
         <MappingFragment StoreEntitySet="ServiceTypes">
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />

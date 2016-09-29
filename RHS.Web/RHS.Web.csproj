@@ -79,7 +79,10 @@
     <Content Include="app\authentication\login-controller.js" />
     <Content Include="app\authentication\login.html" />
     <Content Include="app\authentication\signin.html" />
-    <Content Include="app\dashboard\shared-views\shared-view.html" />
+    <Content Include="app\dashboard\main\controllers\main-controller.js" />
+    <Content Include="app\dashboard\main\services\main-service.js" />
+    <Content Include="app\dashboard\main\views\main.html" />
+    <Content Include="app\dashboard\shared-views\form-view.html" />
     <Content Include="app\dashboard\user\controllers\user-controller.js" />
     <Content Include="app\dashboard\user\views\user-list.html" />
     <Content Include="app\dashboard\user\services\user-service.js" />

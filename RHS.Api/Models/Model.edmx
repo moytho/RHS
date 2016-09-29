@@ -116,6 +116,7 @@
           </Key>
           <Property Name="ServiceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="SessionItems">
@@ -569,6 +570,7 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Services" Relationship="RHSModel.FK_Service_ServiceTypes" FromRole="ServiceType" ToRole="Service1" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SessionItem">
           <Key>
@@ -878,6 +880,7 @@
           <EntitySetMapping Name="ServiceTypes">
             <EntityTypeMapping TypeName="RHSModel.ServiceType">
               <MappingFragment StoreEntitySet="ServiceTypes">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
